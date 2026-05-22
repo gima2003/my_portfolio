@@ -1,20 +1,15 @@
 import React from "react";
 import profileImg from "../assets/profile.png";
 
-
-
 function Home() {
   return (
-    <div className="min-h-screen bg-[#021024] text-white">
-      {/* Background glow */}
+    <div className="min-h-screen bg-[#021024] text-white" id="top">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 h-[520px] w-[520px] rounded-full bg-[#5483B3]/25 blur-3xl" />
         <div className="absolute -bottom-40 -left-40 h-[520px] w-[520px] rounded-full bg-[#7DA0CA]/20 blur-3xl" />
       </div>
 
-      {/* Content wrapper */}
       <div className="relative">
-        {/* NAVBAR */}
         <header className="mx-auto max-w-6xl px-6 pt-6">
           <nav className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-5 py-4 backdrop-blur">
             <div className="flex items-center gap-3">
@@ -28,81 +23,86 @@ function Home() {
             </div>
 
             <ul className="hidden md:flex items-center gap-7 text-sm text-white/80">
-              <li className="hover:text-[#C1E8FF] cursor-pointer">Home</li>
-              <li className="hover:text-[#C1E8FF] cursor-pointer">Services</li>
-              <li className="hover:text-[#C1E8FF] cursor-pointer">Works</li>
-              <li className="hover:text-[#C1E8FF] cursor-pointer">Resume</li>
-              <li className="hover:text-[#C1E8FF] cursor-pointer">Skills</li>
-              <li className="hover:text-[#C1E8FF] cursor-pointer">Contact</li>
+              <li><a href="#top" className="hover:text-[#C1E8FF]">Home</a></li>
+              <li><a href="#projects" className="hover:text-[#C1E8FF]">Projects</a></li>
+              <li><a href="#education" className="hover:text-[#C1E8FF]">Education</a></li>
+              <li><a href="#skills" className="hover:text-[#C1E8FF]">Skills</a></li>
+              <li><a href="#contact" className="hover:text-[#C1E8FF]">Contact</a></li>
             </ul>
 
-            <button className="rounded-xl bg-[#5483B3] px-4 py-2 text-sm font-semibold hover:bg-[#7DA0CA] transition">
+            <a
+              href="#contact"
+              className="rounded-xl bg-[#5483B3] px-4 py-2 text-sm font-semibold hover:bg-[#7DA0CA] transition"
+            >
               Hire me
-            </button>
+            </a>
           </nav>
         </header>
 
-        {/* HERO */}
         <main className="mx-auto max-w-6xl px-6 pt-12 pb-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-            {/* Left */}
             <div>
               <p className="text-sm text-white/70 mb-3">
-                I am <span className="text-[#C1E8FF] font-semibold">Your Name</span>
+                Hello, I'm{" "}
+                <span className="text-[#C1E8FF] font-semibold">
+                  Gimhani Pabodha
+                </span>
               </p>
 
               <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
-                Web Developer <span className="text-[#5483B3]">+</span>
+                Data Scientist
+                <span className="text-[#5483B3]"> +</span>
                 <br />
-                UX Designer
+                Data Engineer
               </h1>
 
               <p className="mt-5 text-white/70 max-w-xl">
-                I build modern, responsive web experiences with React. Focused on clean UI,
-                performance, and user-centered design.
+                3rd-year Data Science undergraduate at SLIIT with experience in
+                data analytics, ETL pipelines, statistical analysis, business
+                intelligence, and full-stack development.
               </p>
 
               <div className="mt-7 flex flex-wrap gap-4">
-                <button className="rounded-2xl bg-[#5483B3] px-6 py-3 font-semibold hover:bg-[#7DA0CA] transition">
+                <a
+                  href="/Gimhani_Pabodha_CV.pdf"
+                  className="rounded-2xl bg-[#5483B3] px-6 py-3 font-semibold hover:bg-[#7DA0CA] transition"
+                >
                   Download CV
-                </button>
-                <button className="rounded-2xl border border-white/15 bg-white/5 px-6 py-3 font-semibold hover:bg-white/10 transition">
-                  View Portfolio
-                </button>
+                </a>
+                <a
+                  href="#projects"
+                  className="rounded-2xl border border-white/15 bg-white/5 px-6 py-3 font-semibold hover:bg-white/10 transition"
+                >
+                  View Projects
+                </a>
               </div>
 
-              {/* Social */}
               <div className="mt-7 flex items-center gap-3 text-white/70">
-                {["in", "gh", "be", "ig"].map((x) => (
-                  <div
-                    key={x}
-                    className="h-10 w-10 rounded-xl border border-white/10 bg-white/5 flex items-center justify-center hover:bg-white/10 hover:text-[#C1E8FF] transition cursor-pointer"
-                  >
-                    {x}
-                  </div>
-                ))}
+                <a href="https://www.linkedin.com/in/gimhani-pabodha-3b4755285/" target="_blank" className="social-icon">In</a>
+                <a href="https://github.com/gimhani-pabodha" target="_blank" className="social-icon">gh</a>
               </div>
             </div>
 
-            {/* Right - Profile card */}
             <div className="flex justify-center lg:justify-end">
               <div className="w-full max-w-md rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 to-white/5 p-6 backdrop-blur">
                 <div className="rounded-2xl bg-[#052659] border border-white/10 p-5">
-                   <img
-                        src={profileImg}
-                        alt="Gimhani Pabodha"
-                        className="h-56 w-full rounded-2xl object-cover border border-white/10"
-                      />
+                  <img
+                    src={profileImg}
+                    alt="Gimhani Pabodha"
+                    className="h-56 w-full rounded-2xl object-cover border border-white/10"
+                  />
                   <div className="mt-4">
-                    <p className="text-sm text-white/60">Available for freelance</p>
-                    <p className="text-lg font-semibold">Let’s build something great.</p>
+                    <p className="text-sm text-white/60">Open to internships</p>
+                    <p className="text-lg font-semibold">
+                      Data Science • Analytics • Engineering
+                    </p>
                   </div>
                 </div>
 
                 <div className="mt-5 grid grid-cols-2 gap-3">
                   <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
                     <p className="text-xs text-white/60">Specialty</p>
-                    <p className="font-semibold">React UI</p>
+                    <p className="font-semibold">Data Analytics</p>
                   </div>
                   <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
                     <p className="text-xs text-white/60">Based in</p>
@@ -113,18 +113,14 @@ function Home() {
             </div>
           </div>
 
-          {/* STATS */}
           <section className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { k: "14", t: "Years of\nExperience" },
-              { k: "50+", t: "Projects\nCompleted" },
-              { k: "1.5K", t: "Happy\nClients" },
-              { k: "14", t: "Awards\nWon" },
+              { k: "3x", t: "Dean’s List\nAwards" },
+              { k: "3.6+", t: "Current\nGPA" },
+              { k: "6+", t: "Projects\nCompleted" },
+              { k: "Year 3", t: "Data Science\nUndergraduate" },
             ].map((s) => (
-              <div
-                key={s.t}
-                className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur hover:bg-white/10 transition"
-              >
+              <div key={s.t} className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur hover:bg-white/10 transition">
                 <p className="text-2xl font-extrabold text-[#C1E8FF]">{s.k}</p>
                 <p className="mt-2 text-sm text-white/70 whitespace-pre-line">{s.t}</p>
               </div>
