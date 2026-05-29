@@ -3,6 +3,11 @@ import BI from "../assets/BI.jpeg";
 import ONE from "../assets/ONE.jpeg";
 import AI from "../assets/AI.jpeg";
 import dashboard from "../assets/dashboard.jpeg";
+import pic1 from "../assets/Picture1.png";
+import pic2 from "../assets/pic2.png";
+import pic3 from "../assets/pic3.png";
+import pic4 from "../assets/pic4.jpg";
+import pic6 from "../assets/pic6.png";
 
 const CATEGORIES = [
   "All",
@@ -21,6 +26,7 @@ const PROJECTS = [
     desc: "Designed a star schema data warehouse, built ETL pipelines using SSIS, created SSAS cubes, and developed Power BI dashboards for an online food ordering dataset.",
     tech: ["SSIS", "SSAS", "Power BI", "SQL Server", "Excel"],
     image: BI,
+    githubLink: "https://github.com/gima2003/DWBI-OnlineFood-DataWarehouse.git",
   },
   {
     id: 2,
@@ -29,6 +35,7 @@ const PROJECTS = [
     desc: "Built an NLP-based machine learning application to classify news articles as real or fake using TF-IDF vectorization and Logistic Regression.",
     tech: ["Python", "NLP", "Scikit-learn", "Streamlit", "TF-IDF"],
     image: AI,
+    githubLink: "https://github.com/gima2003/Fake-News-Detection.git",
   },
   {
     id: 3,
@@ -37,6 +44,7 @@ const PROJECTS = [
     desc: "Conducted an end-to-end statistical modelling study to analyze how learning engagement affects long-term knowledge retention using regression and hypothesis testing.",
     tech: ["Python", "Statistics", "Regression", "Data Visualization"],
     image: dashboard,
+    githubLink: "https://github.com/umar-ahamed-ds/TPSM-Assignment",
   },
   {
     id: 4,
@@ -44,15 +52,17 @@ const PROJECTS = [
     category: "Full-Stack",
     desc: "Developed a centralized campus resource management system with booking workflows, maintenance ticketing, role-based access control, and secure authentication.",
     tech: ["Spring Boot", "React.js", "MySQL", "GitHub Actions"],
-    image: ONE,
+    image: pic1,
+    githubLink: "https://github.com/gima2003/it3030-paf-2026-smart-campus-groupY3S1_WD_99.git",
   },
   {
     id: 5,
     title: "Ceylon Colony Web Application",
     category: "Full-Stack",
-    desc: "Real client-based MERN stack web application for a Sri Lankan honey brand. Worked on product and inventory management with CRUD, search, filters, reports, and chatbot integration.",
+    desc: "Real client-based MERN stack web application for a Sri Lankan honey brand with CRUD, search, filters, reports, and chatbot integration.",
     tech: ["React.js", "Node.js", "Express.js", "MongoDB"],
-    image: BI,
+    image: pic3,
+    githubLink: "",
   },
   {
     id: 6,
@@ -60,8 +70,35 @@ const PROJECTS = [
     category: "Mobile App",
     desc: "Designed and implemented Android mobile application interfaces for product browsing, product details, search, filter, and structured navigation flows.",
     tech: ["Android Studio", "Java", "XML", "Mobile UI"],
-    image: ONE,
+    image: pic4,
+    githubLink: "",
   },
+  {
+    id: 7,
+    title: "Hospital Emergency Room Analysis Dashboard",
+    category: "Data Science",
+    desc: "Developed an interactive Power BI dashboard to analyze patient volume, wait times, satisfaction scores, admissions, referral departments, demographics, and peak-hour trends.",
+    tech: ["Power BI", "Power Query", "DAX", "Data Modeling", "Data Visualization"],
+    image: pic2,
+    githubLink: "https://github.com/gima2003/hospital-emergency-room-powerbi-dashboard.git",
+  },
+   {
+  id: 8,
+  title: "Aura Pulse – Personal Wellness App",
+  category: "Mobile App",
+  desc: "Developed a personal wellness Android application that enables users to track daily habits, log moods, receive hydration reminders, and visualize wellness insights through an intuitive and responsive mobile interface.",
+  tech: [
+    "Kotlin",
+    "Android Studio",
+    "SharedPreferences",
+    "Activities",
+    "Fragments",
+    "Notifications"
+  ],
+  image: pic6,
+  githubLink: "https://github.com/gima2003/aura-pulse-wellness-app.git",
+},
+  
 ];
 
 function Projects() {
@@ -141,24 +178,37 @@ function ProjectCard({ project }) {
         </div>
       </div>
 
-      <div className="p-5">
-        <h3 className="text-lg font-extrabold text-white group-hover:text-[#C1E8FF] transition">
-          {project.title}
-        </h3>
+      <div className="p-5 flex flex-col min-h-[330px]">
+        <div>
+          <h3 className="text-lg font-extrabold text-white group-hover:text-[#C1E8FF] transition">
+            {project.title}
+          </h3>
 
-        <p className="mt-2 text-sm text-white/65 leading-relaxed">
-          {project.desc}
-        </p>
+          <p className="mt-2 text-sm text-white/65 leading-relaxed">
+            {project.desc}
+          </p>
 
-        <div className="mt-4 flex flex-wrap gap-2">
-          {project.tech.map((item) => (
-            <span
-              key={item}
-              className="rounded-full border border-white/10 bg-[#052659]/40 px-3 py-1 text-xs text-white/75"
-            >
-              {item}
-            </span>
-          ))}
+          <div className="mt-4 flex flex-wrap gap-2">
+            {project.tech.map((item) => (
+              <span
+                key={item}
+                className="rounded-full border border-white/10 bg-[#052659]/40 px-3 py-1 text-xs text-white/75"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-auto pt-5">
+          <a
+            href={project.githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-full bg-[#5483B3] px-5 py-2 text-sm font-semibold text-[#021024] hover:bg-[#C1E8FF] transition-all duration-300"
+          >
+            View Project →
+          </a>
         </div>
       </div>
 
